@@ -2,10 +2,10 @@
 
 Copy this template to `cc-lab-YOUR_ID/lab1/README.md` in your own repository. Follow [the instructions](lab1-instruction.md). Put your screenshots in `lab1/images/` with the file names below.
 
-- **Student name:**
-- **Student ID:**
-- **Learner Lab user name:**
-- **Date completed:**
+- **Student name: SOKHOM Panha**
+- **Student ID: e20220343**
+- **Learner Lab user name: voclabs/user5623391=SOKHOM_PANHA**
+- **Date completed:30, Oct, 2026**
 
 ---
 
