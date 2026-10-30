@@ -56,7 +56,11 @@ Did you connect with your own SSH client or with EC2 Instance Connect?
 Paste the commands you ran to install the web server and create `index.html`:
 
 ```bash
-
+sudo yum update -y
+sudo yum install -y httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo sh -c 'echo "Welcome to the EC2 Challenge" > /var/www/html/index.html'
 ```
 
 ### Browser test
@@ -67,16 +71,18 @@ Paste the commands you ran to install the web server and create `index.html`:
 
 ## Questions
 
-1. Your security group has an SSH rule and an HTTP rule. What does each one let you do? What would stop working if you deleted the HTTP rule?
-2. In Part 1.1 you never logged in to install the web server. What installed it, and when did it run?
-3. Why does the web page open with `http://` but not with `https://`?
-4. Part 1.2 asked for a 10 GiB root volume. Where in the launch settings did you set it, and how can you check the size on the running instance?
+1. SSH lets you remotely connect to the server. HTTP lets browsers load the web page. If the HTTP rule is deleted, the web page will not open.
+2. A **user data script** installed it during the first boot of the instance.
+3. The server only uses HTTP and has no HTTPS/TLS certificate or port 443 configuration.
+4. The 10 GiB root volume was set under **Advanced details → Storage → Configure storage → Root volume → Size (GiB)** in the launch settings. Check it with `lsblk` and `df -h /` on the instance.
 
 ## Problems and how I solved them (optional)
 
+- No major problems.
+
 ## AI note (optional)
 
-One suggestion an AI tool gave you and how you checked it.
+I asked AI for commands to install Apache. I checked and ran them with `sudo` on the EC2 instance, then confirmed the page in the browser.
 
 ## Clean up
 
