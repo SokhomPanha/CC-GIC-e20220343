@@ -99,3 +99,5 @@ Complete these steps **after** saving your report evidence to avoid further Lear
 ## Conclusion
 
 I configured an Application Load Balancer with an Auto Scaling group running two Apache web servers. Browser responses showed different instance hostnames, demonstrating request distribution. After Apache was stopped on one instance, the target group reported it unhealthy, and Auto Scaling replaced it. The final target group showed two healthy instances again.
+
+......
